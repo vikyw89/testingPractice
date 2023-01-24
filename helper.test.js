@@ -1,4 +1,4 @@
-import { calculator, capitalize, reverseString } from "./helper";
+import { caesarCypher, calculator, capitalize, reverseString } from "./helper";
 
 // A capitalize function that takes a string and returns it with the first character capitalized.
 
@@ -47,5 +47,26 @@ describe("calculator", () =>{
     })
     test("10 * 5 toEqual 50", ()=>{
         expect(calculator.multiply(10,5)).toEqual(50)
+    })
+})
+
+describe("caesarCypher", ()=>{
+    test("a shift 1 toBe b", ()=>{
+        expect(caesarCypher("a",1)).toBe("b")
+    })
+    test("a shift -1 toBe z", ()=>{
+        expect(caesarCypher("a",-1)).toBe("z")
+    })
+    test("A shift 1 to be B", ()=>{
+        expect(caesarCypher("A",1)).toBe("B")
+    })
+    test("A shift -1 to be Z", ()=>{
+        expect(caesarCypher("A",-1)).toBe("Z")
+    })
+    test(`"6 cars !" shift 28 to be "6 dbst !"`, ()=>{
+        expect(caesarCypher("6 cars !",28)).toBe("6 ectu !")
+    })
+    test(`shift by big negative number`, ()=>{
+        expect(caesarCypher("a",-127)).toBe("d")
     })
 })

@@ -30,4 +30,29 @@ class calculator {
     }
 }
 
-export { capitalize, reverseString, calculator }
+const caesarCypher = (string, shift) => {
+    const simplifiedShift = (shift % 26) + 26
+    // make string loopable
+    const loopableString = [...string]
+    const cracked = loopableString.reduce((output, item)=>{
+        console.log({output})
+        switch(true){
+            case item.match(new RegExp(String.raw`[a-z]`)) !== null:
+                console.log('trigger')
+                const aCharCode = 'a'.charCodeAt(0)
+                output.push(String.fromCharCode(((item.charCodeAt(0) - aCharCode) + simplifiedShift)%26 + aCharCode))
+                break
+            case item.match(new RegExp(String.raw`[A-Z]`)) !== null:
+                const ACharCode = 'A'.charCodeAt(0)
+                output.push(String.fromCharCode(((item.charCodeAt(0) - ACharCode) + simplifiedShift)%26 + ACharCode))
+                break
+            default:
+                output.push(item)
+                break
+        }
+        return output
+    },[]).join('')
+    return cracked
+}
+
+export { capitalize, reverseString, calculator, caesarCypher }
