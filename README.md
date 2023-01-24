@@ -1,5 +1,11 @@
 # testingPractice
 
+to run, clone this repo and type these in CLI:
+```
+npm install
+npm run test
+```
+
 <section id="assignment">
   <h3><a href="#assignment" class="anchor-link">Assignment</a></h3>
 
