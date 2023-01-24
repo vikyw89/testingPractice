@@ -55,4 +55,22 @@ const caesarCypher = (string, shift) => {
     return cracked
 }
 
-export { capitalize, reverseString, calculator, caesarCypher }
+const analyzeArray = (arr) => {
+    // length
+    const length = arr.length
+    // average
+    const average = arr.reduce((output, item)=>output+item,0) / length
+    // min
+    const min = Math.min(...arr)
+    // max
+    const max = Math.max(...arr)
+    console.log({length, average,min,max})
+    return {
+        average:average,
+        min:min,
+        max:max,
+        length:length
+    }
+}
+
+export { capitalize, reverseString, calculator, caesarCypher, analyzeArray }

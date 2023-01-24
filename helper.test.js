@@ -1,4 +1,4 @@
-import { caesarCypher, calculator, capitalize, reverseString } from "./helper";
+import { analyzeArray, caesarCypher, calculator, capitalize, reverseString } from "./helper";
 
 // A capitalize function that takes a string and returns it with the first character capitalized.
 
@@ -68,5 +68,21 @@ describe("caesarCypher", ()=>{
     })
     test(`shift by big negative number`, ()=>{
         expect(caesarCypher("a",-127)).toBe("d")
+    })
+})
+
+describe("analyzeArray", () => {
+    test("empty array", () =>{
+        expect(analyzeArray([])).toEqual({
+            length: 0, average: NaN, min: Infinity, max: -Infinity 
+        })
+    })
+    test("array of number", ()=>{
+        expect(analyzeArray([1,2,3,4,5])).toEqual({
+            average: 3,
+            min: 1,
+            max: 5,
+            length: 5
+        })
     })
 })
