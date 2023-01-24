@@ -5,4 +5,10 @@ const capitalize = (arg) => {
     return output
 }
 
-export { capitalize }
+const reverseString = (arg) => {
+    if (typeof arg !== "string") return arg
+    const output = [...arg].sort((a,b)=>-1).join('')
+    return output
+}
+
+export { capitalize, reverseString }
