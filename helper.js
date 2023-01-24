@@ -11,4 +11,23 @@ const reverseString = (arg) => {
     return output
 }
 
-export { capitalize, reverseString }
+class calculator {
+    static add = (arg, arg2)=>{
+        if (typeof arg !== "number" || typeof arg2 !== "number") return undefined
+        return arg + arg2
+    }
+    static substract = (arg,arg2) => {
+        if (typeof arg !== "number" || typeof arg2 !== "number") return undefined
+        return arg - arg2
+    }
+    static divide = (arg, arg2) => {
+        if (typeof arg !== "number" || typeof arg2 !== "number") return undefined
+        return arg / arg2
+    }
+    static multiply = (arg,arg2) => {
+        if (typeof arg !== "number" || typeof arg2 !== "number") return undefined
+        return arg * arg2
+    }
+}
+
+export { capitalize, reverseString, calculator }

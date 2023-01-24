@@ -1,4 +1,4 @@
-import { capitalize, reverseString } from "./helper";
+import { calculator, capitalize, reverseString } from "./helper";
 
 // A capitalize function that takes a string and returns it with the first character capitalized.
 
@@ -29,5 +29,23 @@ describe("reverseString", ()=>{
     })
     test("2342 to be 2342", ()=>{
         expect(reverseString(2342)).toBe(2342)
+    })
+})
+
+describe("calculator", () =>{
+    test("4 add 5 toEqual 9", ()=>{
+        expect(calculator.add(4,5)).toEqual(9)
+    })
+    test(`"4" add 4 toEqual undefined`, ()=>{
+        expect(calculator.add("4",4)).toEqual(undefined)
+    })
+    test("4 - 6 toEqual -2", ()=>{
+        expect(calculator.substract(4,6)).toEqual(-2)
+    })
+    test("10 / 5 toEqual 2", () =>{
+        expect(calculator.divide(10,5)).toEqual(2)
+    })
+    test("10 * 5 toEqual 50", ()=>{
+        expect(calculator.multiply(10,5)).toEqual(50)
     })
 })
